@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuleiro da Assertividade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f7fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-right: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #007bff;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tabuleiro da Assertividade</h1>
+        <form id="assertivenessForm">
+            <!-- Pergunta 1 -->
+            <div class="question">
+                <p>1. Sou muito franco: falo com o outro tudo o que penso sobre ele.</p>
+                <label><input type="radio" name="q1" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q1" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q1" value="Assertivo"> Assertivo</label>
+            </div>
+			<div class="question">
+                <p>2. Expresso verbalmente meus sentimentos com facilidade.</p>
+                <label><input type="radio" name="q2" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q2" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q2" value="Assertivo"> Assertivo</label>
+            </div>
+			<div class="question">
+                <p>3. Se percebo que errei, desculpo-me imediatamente.</p>
+                <label><input type="radio" name="q3" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q3" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q3" value="Assertivo"> Assertivo</label>
+            </div>
+			<div class="question">
+                <p>4. Se alguém se engana sobre algo a meu respeito, não o corrijo para não deixá-lo embaraçado.</p>
+                <label><input type="radio" name="q4" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q4" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q4" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>5. Fico muito incomodado quando recuso um pedido de alguém.</p>
+                <label><input type="radio" name="q5" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q5" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q5" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>6. Reluto em aceitar críticas que fazem ao meu trabalho.</p>
+                <label><input type="radio" name="q6" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q6" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q6" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>7. Tenho dificuldade em esperar a minha vez de falar.</p>
+                <label><input type="radio" name="q7" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q7" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q7" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>8. Escuto atentamente pontos de vista diferentes dos meus.</p>
+                <label><input type="radio" name="q8" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q8" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q8" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>9. Valorizo as ideias de pessoas que discordam de mim.</p>
+                <label><input type="radio" name="q9" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q9" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q9" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>10. Tenho dificuldade em dizer “NÃO” aos meus interlocutores.</p>
+                <label><input type="radio" name="q10" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q10" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q10" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>11. Acabo muitas vezes tendo de seguir o que os outros determinam.</p>
+                <label><input type="radio" name="q11" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q11" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q11" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>12. Não sou de pedir desculpas.</p>
+                <label><input type="radio" name="q12" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q12" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q12" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>13. Tendo a suportar calado muitas situações desagradáveis.</p>
+                <label><input type="radio" name="q13" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q13" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q13" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>14. Costumo ouvir até o final o meu interlocutor, antes de colocar o meu ponto de vista.</p>
+                <label><input type="radio" name="q14" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q14" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q14" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>15. Sempre escuto e levo em conta o ponto de vista do outro.</p>
+                <label><input type="radio" name="q15" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q15" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q15" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>16. Evito expor meu ponto de vista se percebo que os outros pensam de maneira diferente de mim.</p>
+                <label><input type="radio" name="q16" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q16" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q16" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>17. Quando digo não a uma solicitação de alguém, sinto-me desconfortável e culpado.</p>
+                <label><input type="radio" name="q17" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q17" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q17" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>18. Diante das pessoas muito cultas, tenho dificuldade em me expressar.</p>
+                <label><input type="radio" name="q18" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q18" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q18" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>19. Fico irritado se preciso lembrar alguém de suas obrigações.</p>
+                <label><input type="radio" name="q19" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q19" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q19" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>20. Prefiro resolver diretamente com o envolvido as situações de conflito.</p>
+                <label><input type="radio" name="q20" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q20" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q20" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>21. Acredito que a ironia é uma forma elegante de expressar o que penso.</p>
+                <label><input type="radio" name="q21" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q21" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q21" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>22. Sempre reconheço que tenho uma parcela de responsabilidade nos conflitos em que me envolvo.</p>
+                <label><input type="radio" name="q22" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q22" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q22" value="Assertivo"> Assertivo</label>
+            </div>
+						<div class="question">
+                <p>23. Não aceito que os outros me digam o que devo e o que não devo fazer.</p>
+                <label><input type="radio" name="q23" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q23" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q23" value="Assertivo"> Assertivo</label>
+            </div>
+			<div class="question">
+                <p>24. Dizer o que penso e sinto na maioria das vezes é constrangedor.</p>
+                <label><input type="radio" name="q24" value="Agressivo"> Agressivo</label>
+                <label><input type="radio" name="q24" value="Não assertivo"> Não assertivo</label>
+                <label><input type="radio" name="q24" value="Assertivo"> Assertivo</label>
+            </div>
+            <!-- ... Adicione todas as 24 perguntas de forma similar ... -->
+            <button type="button" id="calculateButton">Calcular</button>
+        </form>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        const form = document.getElementById('assertivenessForm');
+        const resultsDiv = document.getElementById('results');
+        const calculateButton = document.getElementById('calculateButton');
+
+        const gabarito = [
+            "Agressivo", "Assertivo", "Assertivo", "Não assertivo", "Não assertivo", "Agressivo",
+        "Agressivo", "Assertivo", "Assertivo", "Não assertivo", "Não assertivo", "Agressivo",
+        "Não assertivo", "Assertivo", "Assertivo", "Não assertivo", "Não assertivo", "Não assertivo",
+        "Agressivo", "Assertivo", "Agressivo", "Assertivo", "Agressivo", "Agressivo"
+        ];
+
+        calculateButton.addEventListener('click', function() {
+            let acertos = 0;
+            let feedback = '';
+
+            for (let i = 0; i < 24; i++) {
+                const radios = form['q' + (i + 1)];
+                let resposta = null;
+                for (const radio of radios) {
+                    if (radio.checked) {
+                        resposta = radio.value;
+                        break;
+                    }
+                }
+
+                if (!resposta) {
+                    alert('Por favor, responda a questão ' + (i + 1));
+                    return;
+                }
+
+                if (resposta === gabarito[i]) {
+                    acertos++;
+                    feedback += (i + 1) + ". Correto! Você marcou: " + resposta + "<br>";
+                } else {
+                    feedback += (i + 1) + ". Errado! Você marcou: " + resposta + ". Resposta correta: " + gabarito[i] + "<br>";
+                }
+            }
+
+            feedback += "<br>Total de acertos: " + acertos + "/24";
+            resultsDiv.innerHTML = feedback;
+            resultsDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

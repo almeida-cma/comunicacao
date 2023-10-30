@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Escuta Ativa</title>
+</head>
+<body>
+    <form id="escutaForm">
+        <div>
+            <p>1 - Para escutar, você senta em posição firme, defronte de quem vai falar, assegurando-se de um ambiente favorável?</p>
+            <input type="radio" name="q1" value="10"> Geralmente<br>
+            <input type="radio" name="q1" value="5"> Às vezes<br>
+            <input type="radio" name="q1" value="0"> Raramente<br>
+        </div>
+
+        <div>
+            <p>2 - Ao escutar, você observa quem fala?</p>
+            <input type="radio" name="q2" value="10"> Geralmente<br>
+            <input type="radio" name="q2" value="5"> Às vezes<br>
+            <input type="radio" name="q2" value="0"> Raramente<br>
+        </div>
+
+        <div>
+            <p>3 - Julgando pela aparência e maneira de falar da outra pessoa, você decide se o que ela tem a falar vale a pena ou não?</p>
+            <input type="radio" name="q3" value="0"> Geralmente<br>
+            <input type="radio" name="q3" value="5"> Às vezes<br>
+            <input type="radio" name="q3" value="10"> Raramente<br>
+        </div>
+
+        <div>
+            <p>4 - Você escuta, procurando principalmente ideias?</p>
+            <input type="radio" name="q4" value="10"> Geralmente<br>
+            <input type="radio" name="q4" value="5"> Às vezes<br>
+            <input type="radio" name="q4" value="0"> Raramente<br>
+        </div>
+
+        <div>
+            <p>5 - Enquanto escuta, você escolhe os seus pontos de vista e trata de justificá-los perante o que a pessoa está lhe dizendo?</p>
+            <input type="radio" name="q5" value="0"> Geralmente<br>
+            <input type="radio" name="q5" value="5"> Às vezes<br>
+            <input type="radio" name="q5" value="10"> Raramente<br>
+        </div>
+
+        <div>
+            <p>6 - Você presta atenção a quem está lhe falando?</p>
+            <input type="radio" name="q6" value="10"> Geralmente<br>
+            <input type="radio" name="q6" value="5"> Às vezes<br>
+            <input type="radio" name="q6" value="0"> Raramente<br>
+        </div>
+
+        <div>
+            <p>7 - Escutando uma opinião com a qual não concorda, você interrompe imediatamente quem lhe fala?</p>
+            <input type="radio" name="q7" value="0"> Geralmente<br>
+            <input type="radio" name="q7" value="5"> Às vezes<br>
+            <input type="radio" name="q7" value="10"> Raramente<br>
+        </div>
+
+        <div>
+            <p>8 - Antes de dizer sua opinião, você procura estar certo de que compreendeu o que lhe disseram?</p>
+            <input type="radio" name="q8" value="10"> Geralmente<br>
+            <input type="radio" name="q8" value="5"> Às vezes<br>
+            <input type="radio" name="q8" value="0"> Raramente<br>
+        </div>
+
+        <div>
+            <p>9 - Sentindo que as suas convicções estão sendo abaladas pelo que escuta, você trata de “desligar o receptor”?</p>
+            <input type="radio" name="q9" value="0"> Geralmente<br>
+            <input type="radio" name="q9" value="5"> Às vezes<br>
+            <input type="radio" name="q9" value="10"> Raramente<br>
+        </div>
+
+        <div>
+            <p>10 - Você procura identificar se o que escuta tem lógica e merece ser acreditado?</p>
+            <input type="radio" name="q10" value="10"> Geralmente<br>
+            <input type="radio" name="q10" value="5"> Às vezes<br>
+            <input type="radio" name="q10" value="0"> Raramente<br>
+        </div>
+
+        <input type="submit" value="Calcular">
+    </form>
+
+    <h3>Resultado: <span id="result"></span></h3>
+
+    <script>
+       document.getElementById('escutaForm').addEventListener('submit', function(e) {
+		e.preventDefault();
+
+		let total = 0;
+
+		for (let i = 1; i <= 10; i++) {
+			const checkedValue = document.querySelector(`input[name=q${i}]:checked`);
+			if (!checkedValue) {
+				alert(`Por favor, responda a questão ${i}`);
+				return;
+			}
+			total += parseInt(checkedValue.value);
+		}
+
+		let feedback;
+		if (total <= 65) {
+			feedback = "Dificuldades em realizar a escuta ativa. Precisa repensar.";
+		} else if (total >= 70 && total <= 85) {
+			feedback = "Escuta bem e pode melhorar.";
+		} else {
+			feedback = "Escuta com excelência. Parabéns!";
+		}
+
+		document.getElementById('result').textContent = `${total} - ${feedback}`;
+	});
+
+    </script>
+</body>
+</html>
